@@ -4,6 +4,6 @@
 #include  <fcntl.h>
 
 int main (){
-    fd = open(“foo”, O_RDONLY, 0600);
+    fd = open(“dev/random”, O_RDONLY, 0600);
 
 }
