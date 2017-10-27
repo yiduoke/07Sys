@@ -1,13 +1,15 @@
-all: main.o devRand.o
-	gcc main.o devRand.o -o test_07
-main.o: main.c devRand.o
+all: devRandom.o main.o
+    gcc -o homework devRandom.o main.o
+
+devRandom.o: devRandom.c devRandom.h 
+	gcc -c devRandom.c
+
+main.o: main.c devRandom.h
 	gcc -c main.c
-devRand.o: devRand.h
-	gcc -c devRand.c
 
 clean:
 	rm *.o
-	rm test_07
+	rm *~
 
 run: all
-	./test_07
+	./homework
